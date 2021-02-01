@@ -1,0 +1,10 @@
+.cardclass{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40rem;
+    height:60px;
+    color: burlywood;
+}
+.imgoverlay{
+    color: burlywood
+}

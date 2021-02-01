@@ -1,0 +1,64 @@
+
+    <!-- here we start-->
+    <html>
+      <head>
+      </head>
+      <body>
+        <div class="container-fluid" style="background-color:burlywood;">
+          <div class="row">
+ <!--           <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0"style="background-color:blue">
+              <h4 class="text-center" style="margin: auto; margin-top: 30px; margin-bottom: 10px;">WHY CONTACT US?</h4>
+              <p style="text-align: center;">essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker </p>
+            </div>
+          -->       
+          <div class="card col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0 .cardclass" >
+            <img class="card-img" src={{source}} alt="Card image cap">
+            <div class="card-img-overlay col-lg-12 col-md-6"  style="color:rgb(218, 210, 202) ;">
+              <h2 class="card-title" class="display:inline-block;"> {{country}}
+            </h2><div class=" dropdown;display:inline-block;">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose City
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="about">Cairo</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+              <h4 class="display-3">{{weather.data.current_condition[0].temp_C}}<span class="symbol">°</span>C</h4>
+              <p class="card-text">Feels like:{{weather.data.current_condition[0].FeelsLikeC}}<span class="symbol">°</span> C</p>
+              <div class="display-4">
+                {{weather.data.current_condition[0].weatherDesc[0].value}}</div>
+                <span>Wind speed:{{weather.data.current_condition[0].windspeedKmph}} km/h
+             ,Humidity:{{weather.data.current_condition[0].humidity}}</span>
+          
+             <div class="card-group col-lg-12  col-md-6" >
+              <div class="card col-lg-3  col-md-12 float-left"style="
+              position:fixed-bottom;display:inline-block; padding-top:10px;background-color: transparent;" *ngFor='let day of days;let i=index'>
+            <!--    <img class="card-img-top rounded-circle img-thumbnail" src="{{day.hourly[3].weatherIconUrl[0].value}}" alt="Card image cap">
+              --><div class="card-body 
+              card col-lg-12  col-md-12
+                " style="
+                height: 120px;
+                background-color: transparent;
+                border: hidden;
+                position:fixed-bottom;
+                
+                "
+                >
+                  <p style="margin-bottom: 0px;">{{getNextday(i)}}</p>
+                  <p style="margin-bottom: 0px;">{{day.avgtempC}}<span class="symbol">°</span>C</p>
+                  <p>{{day.hourly[3].weatherDesc[0].value}}</p>
+                </div>
+              </div>
+
+            
+          </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      </body>
+    </html>
