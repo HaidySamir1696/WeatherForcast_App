@@ -23,7 +23,7 @@ export class CityComponent implements OnInit {
   backgroundImg:string="../../assets/background.jpg"
   backgroundCity:string="../../assets/../../assets/"+this.city+"Background.jpg"
   constructor(private weatherservice:WeatherService,private route:ActivatedRoute) {
-    this.width = 900 - this.margin.left - this.margin.right;
+    this.width = 1100 - this.margin.left - this.margin.right;
     this.height = 500 - this.margin.top - this.margin.bottom;
   
    }
@@ -161,8 +161,8 @@ drawBars(data:any[]) {
     .attr('class', 'bar')
     .attr('x', (d:any) => this.x(d.date))
     .attr('y', (d:any) => this.y(parseInt(d.maxtempC)))
-    .attr('width', this.x.bandwidth())
-    .attr('fill', '#498bfc')
+    .attr('width', 40)
+    .attr('fill', '#236c99')
     .attr('height', (d:any) => this.height - this.y(parseInt(d.maxtempC)));
 }
 
