@@ -14,13 +14,14 @@
           <div class="card col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0 .cardclass" >
             <img class="card-img" src={{source}} alt="Card image cap">
             <div class="card-img-overlay col-lg-12 col-md-6"  style="color:rgb(218, 210, 202) ;">
-              <h2 class="card-title" class="display:inline-block;"> {{country}}
-            </h2><div class=" dropdown;display:inline-block;">
+              <h2 class="card-title" class="display:inline-block;" style="  text-transform: capitalize;"> {{country}}
+            </h2><div class=" dropdown;display:inline-block;" style="color: cornsilk;">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose City
+                <span style="color: cornsilk;padding-left: 0px;">Choose City</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="about">Cairo</a>
+                <a class="dropdown-item" routerLink="about/cairo">Cairo</a>
+                <a class="dropdown-item" routerLink="about/luxor">luxor</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
@@ -35,7 +36,7 @@
           
              <div class="card-group col-lg-12  col-md-6" >
               <div class="card col-lg-3  col-md-12 float-left"style="
-              position:fixed-bottom;display:inline-block; padding-top:10px;background-color: transparent;" *ngFor='let day of days;let i=index'>
+              position:fixed-bottom;display:inline-block; padding-top:10px;background-color: transparent;border:white;" *ngFor='let day of days;let i=index'>
             <!--    <img class="card-img-top rounded-circle img-thumbnail" src="{{day.hourly[3].weatherIconUrl[0].value}}" alt="Card image cap">
               --><div class="card-body 
               card col-lg-12  col-md-12

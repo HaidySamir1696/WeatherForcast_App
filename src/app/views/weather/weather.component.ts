@@ -30,7 +30,7 @@ source:string=""
 backgroundImg:string="../../assets/background.jpg"
 /////////
 todayDate:any = new Date();
-weekday:string[] = ["Sunday","Mon","Tues","Wed","Thurs","Fri","Sat"]
+weekday:string[] = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"]
 todayname:string = this.weekday[this.todayDate.getDay()];
 getNextday(i:number){
 

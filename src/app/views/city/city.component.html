@@ -1,11 +1,9 @@
-<p>city works!</p>
+
 <!--
     <p>weather works!</p>
 <span>
 <span>
- nameofcontry: {{country}}
- //nameofday:{{todayname}}
-   // {{weather.data.request[0].query}}
+   {{weather.data.request[0].query}}
 </span>
 </span>
 <p>time : {{weather.data.current_condition[0].observation_time}}</p>
@@ -51,25 +49,26 @@
       <div class="flex-md-4"><img src="{{day.hourly[3].weatherIconUrl[0].value}}" ></div>
       <div class="flex-md-4">weather description: {{day.hourly[3].weatherDesc[0].value}}</div>
     </div>
-    
-    <!-- here we start
-    <html>
+  -->
+    <!-- here we start-->
+<!--     <html>
       <head>
+        
       </head>
       <body>
-        <div class="container-fluid" style="background-color:burlywood;">
+      <div class="container-fluid" style="background-color:burlywood;">
           <div class="row">
-          -->
+          
  <!--         da already commented  <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0"style="background-color:blue">
               <h4 class="text-center" style="margin: auto; margin-top: 30px; margin-bottom: 10px;">WHY CONTACT US?</h4>
               <p style="text-align: center;">essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker </p>
             </div>
           -->    
-          <!--   
-          <div class="card col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0 .cardclass" >
+             
+     <!--     <div class="card col-lg-6 offset-lg-3 col-md-6 offset-md-3 offset-sm-0 .cardclass" >
             <img class="card-img" src={{source}} alt="Card image cap">
             <div class="card-img-overlay " style="color:rgb(218, 210, 202) ;">
-              <h2 class="card-title"> {{country}}</h2>
+              <h2 class="card-title"> {{weather.data.request[0].query}}</h2>
               <h4 class="display-3">{{weather.data.current_condition[0].temp_C}}<span class="symbol">°</span>C</h4>
               <p class="card-text">Feels like:{{weather.data.current_condition[0].FeelsLikeC}}<span class="symbol">°</span> C</p>
               <div class="display-4">
@@ -78,10 +77,10 @@
             </div>
           
             <div class="card-group" >
-              <div class="card col-lg-3 col-md-2 col-sm-1 float-left"style="display:inline-block; padding-top:10px;" *ngFor='let day of days;let i=index'>
-              --><!--   da already commented<img class="card-img-top rounded-circle img-thumbnail" src="{{day.hourly[3].weatherIconUrl[0].value}}" alt="Card image cap">
+              <div class="card col-lg-3 col-md-12 col-sm-12 float-left"style="display:inline-block; padding-top:10px;" *ngFor='let day of days;let i=index'>
+         -->         <!--   da already commented<img class="card-img-top rounded-circle img-thumbnail" src="{{day.hourly[3].weatherIconUrl[0].value}}" alt="Card image cap">
                 -->
-                <!--<div class="card-body" style="
+            <!--   <div class="card-body" style="
                 background-image: url({{backgroundImg}});
                 height: 120px;
                 ">
@@ -93,10 +92,109 @@
 
             
           </div>
+          
+          <h2 >Angular 10 : Bar Chart - Employee Statistic of Diff Company</h2>
+          
+      <div class="col-lg-12 col-md-6 offset-sm-0"id="barChart" style="position: relative; height:50vh; width:200vw"></div>
+    </div>
+          </div>
+     
+        </div>
+        
+    </body> 
+    </html>
+-->
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color:floralwhite;">
+      <div class="row">
+        <div class="col col-lg-8  offset-lg-2 col-md-4  offset-sm-0" style="background-image: url({{backgroundCity}});">
+    <div class="row">
+      <div class="col col-lg-6  col-md-4  offset-sm-0" style="opacity: 0.7;">
+      <div class="row">
+        <div class="col col-lg-12 col-md-6">
+          <h2 > {{weather.data.request[0].query}}</h2>
+          <h4 class="display-4">{{weather.data.current_condition[0].temp_C}}<span class="symbol">°</span>C</h4>
+          <p >Feels like:{{weather.data.current_condition[0].FeelsLikeC}}<span class="symbol">°</span> C</p>
+          <div class="display-5" style="font-size: 20px;">{{weather.data.current_condition[0].weatherDesc[0].value}}</div>
+            <div class="row">
+              <div class="col col-lg-4 col-md-12" >
+                Windspeed:{{weather.data.current_condition[0].windspeedKmph}}km/h
+              </div>
+              <div class="col col-lg-3 col-md-12">
+                Humidity:{{weather.data.current_condition[0].humidity}}
+              </div>
+              <div class="col col-lg-3 col-md-12">
+                visibility :{{weather.data.current_condition[0].visibility}}
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col col-lg-12 col-md-12">
+            <h5 style="text-align: center;">
+            Review about today 24 hour weather forecast 
+            </h5>
+            <table class="table" style="border: solid;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">image</th>
+                  <th scope="col">temp in C</th>
+                  <th scope="col">Wind speed (km/h)</th>
+                </tr>
+              </thead>
+              <tbody>
+                  
+                   <tr style="border: solid; width: 400px;margin-bottom: 0px;margin-top: 0px;padding-top: 0px;padding-bottom: 0px;" *ngFor='let hour of hourly;let i=index'>
+                      <td style="padding-bottom: 0px;padding-top: 0px;">at:{{hour.time}}</td>
+                      <td style="margin-bottom: 0px;padding-top: 0px; padding-bottom: 0px;"><img src='{{hour.weatherIconUrl[0].value}}' height="50px" width="50px" ></td>
+                      <td style="margin-bottom: 0px;margin-top: 0px;">{{hour.tempC}} C</td>
+                      <td style="margin-bottom: 0px;margin-top: 0px;">{{hour.windspeedKmph}} km/h</td>
+                   
+                  </tr>
+                    </tbody>
+            </table>
           </div>
         </div>
       </div>
-      </body>
-    </html>
-
--->
+      <div class="col col-lg-6 col-md-4 offset-sm-0 " style="margin-left: 0px;margin-right: 0px; padding-left: 0px;padding-right: 0px;">
+      <img src={{source}} width="500px" height="740px" >
+    </div>
+    </div> 
+    <div class="row">
+  
+      <div class=" col-lg-4  col-md-2  offset-sm-0" >
+        <div class="card col-lg-12  col-md-12 "style="
+       padding-top:10px;background-color: transparent;border-radius:50% ;text-align:center" *ngFor='let day of days;let i=index'>
+      <!--    <img class="card-img-top rounded-circle img-thumbnail" src="{{day.hourly[3].weatherIconUrl[0].value}}" alt="Card image cap">
+        --><div class="card-body 
+        card col-lg-12  col-md-12
+          " style="
+          height: 120px;
+          background-color: transparent;
+          border: hidden;
+          position:fixed-bottom;
+          
+          "
+          >
+            <p style="margin-bottom: 0px;">{{getNextday(i)}}</p>
+            <p style="margin-bottom: 0px;">{{day.avgtempC}}<span class="symbol">°</span>C</p>
+            <p>{{day.hourly[3].weatherDesc[0].value}}</p>
+          </div>
+        </div>
+    </div> 
+    <div class="col col-lg-8  col-md-4  offset-sm-0">
+      <h4 style="text-align: center;"> Max-Temperature for the past 14 Days</h4>
+          
+      <div class="col-lg-12 col-md-6 offset-sm-0"id="barChart" style="position: relative; height: 300px; width: 700px;padding-left:0px;padding-right:0px;"></div>
+    </div>   
+  </div> 
+  </div>
+  </div>
+    </div>
+  </body>
+</html>
